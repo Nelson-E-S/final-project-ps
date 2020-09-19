@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.4.RELEASE</version>
+		<version>2.3.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.final</groupId>
-	<artifactId>project</artifactId>
+	<groupId>com.demoDeploy</groupId>
+	<artifactId>SpringNReact</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>project</name>
+	<name>SpringNReact</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -35,6 +35,32 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+		<dependency>
+		    <groupId>javax.xml.bind</groupId>
+		    <artifactId>jaxb-api</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
+		<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -42,6 +68,65 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- builds to frontend -->
+			<plugin>
+			    <groupId>com.github.eirslett</groupId>
+			    <artifactId>frontend-maven-plugin</artifactId>
+			    <version>1.6</version>
+			    <configuration>
+			        <workingDirectory>frontend</workingDirectory>
+			        <installDirectory>target</installDirectory>
+			    </configuration>
+			    <executions>
+			        <execution>
+			            <id>install node and npm</id>
+			            <goals>
+			                <goal>install-node-and-npm</goal>
+			            </goals>
+			            <configuration>
+			                <nodeVersion>v8.9.4</nodeVersion>
+			                <npmVersion>5.6.0</npmVersion>
+			            </configuration>
+			        </execution>
+			        <execution>
+			            <id>npm install</id>
+			            <goals>
+			                <goal>npm</goal>
+			            </goals>
+			            <configuration>
+			                <arguments>install</arguments>
+			            </configuration>
+			        </execution>
+			        <execution>
+			            <id>npm run build</id>
+			            <goals>
+			                <goal>npm</goal>
+			            </goals>
+			            <configuration>
+			                <arguments>run build</arguments>
+			            </configuration>
+			        </execution>
+			    </executions>
+			</plugin>
+			<!-- builds to spring -->
+			<plugin>
+			    <artifactId>maven-antrun-plugin</artifactId>
+			    <executions>
+			        <execution>
+			            <phase>generate-resources</phase>
+			            <configuration>
+			                <target>
+			                    <copy todir="${project.build.directory}/classes/public">
+			                        <fileset dir="${project.basedir}/frontend/build"/>
+			                    </copy>
+			                </target>
+			            </configuration>
+			            <goals>
+			                <goal>run</goal>
+			            </goals>
+			        </execution>
+			    </executions>
 			</plugin>
 		</plugins>
 	</build>
