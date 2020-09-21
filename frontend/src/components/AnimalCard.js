@@ -40,7 +40,7 @@ class AnimalCard extends Component{
         const { loading, errors, data, animal} = this.state;
         if(loading)
             return(
-                <Card style={{width: '10rem'}} className="mx-auto">
+                <Card style={{width: '15rem', height: '3rem'}} className="mx-auto">
                     <Spinner animation="border" role="status" className="mx-auto">
                         <span className="sr-only">Loading image...</span>
                     </Spinner>
@@ -48,7 +48,7 @@ class AnimalCard extends Component{
             );
         if(errors)
             return(
-                <Card style={{width: '10rem'}} className="mx-auto">
+                <Card style={{width: '15rem'}} className="mx-auto">
                     <Card.Body>
                         <Card.Title>Error</Card.Title>
                         <Card.Text>Error loading card fact, reload to try again</Card.Text>
@@ -56,7 +56,7 @@ class AnimalCard extends Component{
                 </Card>
             );
         return(
-            <Card style={{width: '10rem'}}>
+            <Card style={{width: '15rem'}} className="mx-auto">
                 <Card.Img variant='top' src={data.image} />
                 <Card.Body>
                     <Card.Title>{animal} fact</Card.Title>
