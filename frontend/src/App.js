@@ -2,13 +2,12 @@ import React from 'react';
 import './App.css';
 
 //for testing
-import AnimalPage from './pages/AnimalCasePage';
-import AnimalCard from './components/AnimalCard';
+import WeatherDisplay from './components/WeatherDisplay';
 
 function App() {
   return (
     <div className="App">
-      <AnimalPage />
+      <WeatherDisplay />
     </div>
   );
 }

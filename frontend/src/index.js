@@ -8,6 +8,11 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 
+import './styles/weather-icons.css';
+import './styles/weather-icons.min.css';
+import './styles/weather-icons-wind.css';
+import './styles/weather-icons-wind.min.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(
