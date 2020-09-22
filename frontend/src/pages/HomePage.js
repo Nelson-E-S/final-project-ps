@@ -38,15 +38,13 @@ class HomePage extends Component {
                     this.state.dispatch({
                         type:CONFIG_SET,
                         payload: {"id":`${data.id}`,"sets":`${data.sets}`,"items":`${data.items}`}
-                    })
+                    });
                 }).catch(res=>{
                     console.log(res)
                 });
-            
         };
     }
     render(){
-        const cookies = new Cookies();
         return(
             <p>testing...</p>
         );
