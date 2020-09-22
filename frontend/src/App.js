@@ -2,12 +2,12 @@ import React from 'react';
 import './App.css';
 
 //for testing
-import WeatherDisplay from './components/WeatherDisplay';
+import ReduxTest from './components/ReduxTest';
 
 function App() {
   return (
     <div className="App">
-      <WeatherDisplay />
+      <ReduxTest />
     </div>
   );
 }
