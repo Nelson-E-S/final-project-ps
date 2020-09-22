@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.model.UserConfig;
 import com.example.demo.repo.UserConfigRepo;
 
@@ -41,8 +43,10 @@ public class RESTController {
 	}
 	
 	@GetMapping("/user-configs/{id}")
-	UserConfig getUserConfigById(@PathVariable String id) {
-		return repo.findById(id).get();
+	ResponseEntity<UserConfig> getUserConfigById(@PathVariable String id) throws ResourceNotFoundException {
+		//repo.findById(id).get();
+		UserConfig uc = repo.findById(id).orElseThrow(()->new ResourceNotFoundException("User Config not found!"));
+		return ResponseEntity.ok().body(uc);
 	}
 	
 	@PutMapping("/user-configs/{id}")

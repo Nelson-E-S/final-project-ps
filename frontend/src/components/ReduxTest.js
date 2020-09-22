@@ -8,7 +8,7 @@ const mapStateToProps = state =>({
 const ReduxTest = props =>{
     const { configState } = props;
     return(
-        <p>Config State: {configState.cookieFound?configState.user_config:configState.temp_config}</p>
+        <p>Active User Config: {configState.cookieFound?JSON.stringify(configState.user_config):JSON.stringify(configState.temp_config)}</p>
     )
 }
 
