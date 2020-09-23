@@ -1,6 +1,9 @@
 html,body{
     height:100%;
  }
+ .App, nav{
+     min-width: 370px;
+ }
  .carousel,.item,.active{
     height:100%;
   }
@@ -47,8 +50,11 @@ iframe{
     padding: 5%;
 }
 .switchView{
-    margin-top: 30%;
+    margin-top: 216px;
 }
 #saveAlert{
     margin-top: 5%;
+}
+#WeatherDisplay{
+    margin-right:20px;
 }

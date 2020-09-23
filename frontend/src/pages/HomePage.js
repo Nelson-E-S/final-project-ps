@@ -4,6 +4,8 @@ import Cookies from 'universal-cookie';
 import { CONFIG_SET } from '../actions/configActions';
 import axios from 'axios';
 
+import HomeImages from '../components/HomeImages';
+
 const mapStateToProps = state =>({
     configState: state.configState
 })
@@ -45,9 +47,7 @@ class HomePage extends Component {
     }
     render(){
         return(
-            <>
-                testing...
-            </>
+            <HomeImages />
         );
     }
 }

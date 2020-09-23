@@ -31,8 +31,8 @@ class WeatherDisplay extends Component{
             '13n': 'wi-night-alt-snow',
             '50n': 'wi-night-fog'
           };
-        //const defaultQuery = "https://api.openweathermap.org/data/2.5/onecall?lat=40.7108&lon=-74.0108&exclude=minutely,hourly,daily,alerts&appid=7ec98d0ba5a7f5ee79130f54113fdc93"
-        let customQuery = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=minutely,hourly,daily,alerts&appid=7ec98d0ba5a7f5ee79130f54113fdc93";
+        const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
+        let customQuery = `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=minutely,hourly,daily,alerts&appid=${API_KEY}`;
         var options = {
             enableHighAccuracy: true,
             timeout: 5000,
@@ -110,7 +110,7 @@ class WeatherDisplay extends Component{
         }
         if(loading)
             return(
-                <i className={`wi ${weather}`} style={{color:fontColor}}></i>
+                <i className={`wi ${weather}`} style={{color:fontColor}} id="WeatherDisplay"></i>
             );
         return(
             <i className={`wi ${weather}`} style={{color:fontColor}}></i>

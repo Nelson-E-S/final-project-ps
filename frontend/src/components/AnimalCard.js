@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Card, Spinner } from 'react-bootstrap';
+import img1 from '../images/1.jpg';
+import img2 from '../images/2.jpg';
+import img3 from '../images/3.jpg';
+import img4 from '../images/4.jpg';
+import img5 from '../images/5.jpg';
+import img6 from '../images/6.jpg';
+import img7 from '../images/7.jpg';
+import img8 from '../images/8.jpg';
 
 const CancelToken = axios.CancelToken;
 const source = CancelToken.source();
@@ -59,9 +67,10 @@ class AnimalCard extends Component{
                     </Card.Body>
                 </Card>
             );
+        const images = [img1,img2,img3,img4,img5,img6,img7,img8];
         return(
-            <Card style={{width: '15rem'}} className="mx-auto">
-                <Card.Img variant='top' src="https://i.some-random-api.ml/y0MAvtbtkd.jpg" />
+            <Card style={{minWidth:"170px"}} className="mx-auto">
+                <Card.Img variant='top' src={images[Math.floor(Math.random()*images.length)]} />
                 <Card.Body>
                     <Card.Title>{animal} fact</Card.Title>
                     <Card.Text>{JSON.stringify(data)}</Card.Text>

@@ -4,10 +4,10 @@ import { LinkContainer } from 'react-router-bootstrap';
 import WeatherDisplay from '../components/WeatherDisplay';
 
 const MyNav = () =>(
-    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
+    <Navbar bg="dark" variant="dark" expand="md" fixed="top">
         <WeatherDisplay />
         <LinkContainer to="/home">
-            <Navbar.Brand href="#home">My Facts App</Navbar.Brand>
+            <Navbar.Brand href="#home" >My Facts App</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
