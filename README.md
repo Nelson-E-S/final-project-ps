@@ -1,5 +1,5 @@
 #my-facts-app
-Link to App: [my-facts-app](https://warm-harbor-16578.herokuapp.com/home)
+Link to App: [my-facts-app](https://warm-harbor-16578.herokuapp.com/)
 
 #### Problem Statement
 Itemize information , limiting the number of items per user preference
