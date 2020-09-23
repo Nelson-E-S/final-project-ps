@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.demoDeploy</groupId>
-	<artifactId>SpringNReact</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>my-facts-app</artifactId>
+	<version>1.0-final</version>
 	<name>my-facts-app</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Final project for Per Scholas</description>
 
 	<properties>
 		<java.version>11</java.version>
