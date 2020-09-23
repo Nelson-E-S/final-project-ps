@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Row, Col, Button } from 'react-bootstrap';
+import { Form, Row, Col, Button, Alert } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { CONFIG_SET } from '../actions/configActions';
@@ -80,9 +80,9 @@ class SettingsForm extends Component{
         }
     }
     render(){
-        const { reduxState } = this.state;
+        const { reduxState,saveComplete } = this.state;
         return(
-            <Form onSubmit={this.submitHandler}>
+            <Form onSubmit={this.submitHandler} id="settingsForm">
                 <Form.Group as={Row} controlId="formUserID">
                     <Form.Label column sm={2}>
                         Your ID:
@@ -138,6 +138,9 @@ class SettingsForm extends Component{
                     </Form.Group>
                 </fieldset>
                 <Button type="submit">Save Settings</Button>
+                <Alert variant="success" style={saveComplete?{visibility: "visible"}:{visibility: "hidden"}}>
+                    Settings Saved!
+                </Alert>
             </Form>
         );
     }

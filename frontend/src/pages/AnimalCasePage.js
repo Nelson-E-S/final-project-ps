@@ -24,14 +24,14 @@ const AnimalCasePage = (props) =>{
     
     return(
         <Container fluid>
-            <Row>
-                {numOfCols.map((item,index)=>
-                    <Col key={index}>
+            {numOfCols.map((item,index)=>
+                <Row key={index} className="content">
+                    <Col>
                         <h4 style={{textAlign:'center'}}>{animals[item]} fact</h4>
                         <AnimalAccordion animal={animals[item]} numOfCards={numOfItems} />
                     </Col>
-                )}
-            </Row>
+                </Row>
+            )}
         </Container>
     );
 }

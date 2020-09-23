@@ -17,14 +17,14 @@ function App() {
       <HomeCarousel />
       <div id="overlayVideo"></div>
       <Router>
-        <Container fluid id="content">
-          <Row>
-            <Col>
+        <Container fluid>
+          <Row className="content">
+            <Col className="MyNavBack">
               <MyNav />
             </Col>
           </Row>
           <Row>
-            <Col>
+            <Col className="switchView">
               <MySwitch />
             </Col>
           </Row>

@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import WeatherDisplay from '../components/WeatherDisplay';
 
 const MyNav = () =>(
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
         <WeatherDisplay />
         <LinkContainer to="/home">
             <Navbar.Brand href="#home">My Facts App</Navbar.Brand>
