@@ -8,11 +8,16 @@ import { Container, Col, Row } from 'react-bootstrap';
 import MyNav from './components/MyNav';
 import MySwitch from './components/MySwitch';
 
+import HomeCarousel from './components/HomeCarousel';
+
 function App() {
   return (
     <div className="App">
+      <div id="back"></div>
+      <HomeCarousel />
+      <div id="overlayVideo"></div>
       <Router>
-        <Container fluid>
+        <Container fluid id="content">
           <Row>
             <Col>
               <MyNav />

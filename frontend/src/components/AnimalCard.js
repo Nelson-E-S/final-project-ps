@@ -32,13 +32,7 @@ class AnimalCard extends Component{
                         loading: false,
                         data: data[0]
                     })
-                }).catch(function (thrown) {
-                    if (axios.isCancel(thrown)) {
-                      console.log('Request canceled', thrown.message);
-                    } else {
-                      // handle error
-                    }
-                  });
+                });
         }catch(err){
             this.setState({
                 loading: false,

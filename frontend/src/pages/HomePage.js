@@ -45,7 +45,9 @@ class HomePage extends Component {
     }
     render(){
         return(
-            <p>testing...</p>
+            <>
+                testing...
+            </>
         );
     }
 }

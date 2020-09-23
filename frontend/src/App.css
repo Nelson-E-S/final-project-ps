@@ -1,0 +1,46 @@
+html,body{
+    height:100%;
+ }
+ .carousel,.item,.active{
+    height:100%;
+  }
+ .carousel-inner{
+     height:100%;
+ }
+#MyVC {
+    position: fixed;
+    right: 100;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+}
+#overlayVideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+#back{
+    background: black;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -200;
+}
+.carousel-item{
+    width: 100vw;
+    height: 100vh;
+    align-self: center;
+}
+iframe{
+    width: 100vw;
+    height: 100vh;
+}
+#content{
+    background:rgb(255, 255, 255,0.7);
+    height: 100vh;
+}
