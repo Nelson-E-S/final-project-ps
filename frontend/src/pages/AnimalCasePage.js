@@ -11,10 +11,19 @@ const AnimalCasePage = (props) =>{
     const { configState } = props;
     let animals = ['dog','cat','panda','fox','red_panda','koala','birb','racoon','kangaroo'];
     let numOfCols = [];
-    numOfCols = [1,2,3];
+    let numOfItems = 0;
+    if(configState.cookieFound){
+        for(let i = 1; i<=Number(configState.user_config.sets);i++)
+            numOfCols.push(i);
+        numOfItems = Number(configState.user_config.sets);
+    }else{
+        for(let i = 1; i<=Number(configState.temp_config.sets);i++)
+            numOfCols.push(i);
+        numOfItems = Number(configState.temp_config.sets);
+    }
     
     return(
-        <Container>
+        <Container fluid>
             <Row>
                 {numOfCols.map((item,index)=>
                     <Col key={index}>

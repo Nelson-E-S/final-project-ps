@@ -63,7 +63,7 @@ class SettingsForm extends Component{
         });
         if(reduxState.cookieFound){
             const { user_config } = reduxState;
-            let newData = user_config;
+            let newData = {"id":`${user_config.id}`,"sets":setOpt,"items":itemOpt};
             axios
                 .put(`/api/user-configs/${reduxState.user_config.id}`,newData)
                 .then(()=>dispatch({type:CONFIG_SET,payload:newData}))
@@ -71,7 +71,7 @@ class SettingsForm extends Component{
                 .catch(res=>console.log(res));
         }else{
             const { temp_config } = reduxState;
-            let newData = temp_config;
+            let newData = {"id":`${temp_config.id}`,"sets":setOpt,"items":itemOpt};
             axios
                 .post(`/api/user-configs`,newData)
                 .then(()=>dispatch({type:CONFIG_SET,payload:newData}))
