@@ -22,7 +22,7 @@ Everyone, use case is general and can be used for those who want a template for 
 * [React Player](https://www.npmjs.com/package/react-player)
 
 #### Resources and APIs used
-* [OpenWeather](openweathermap.org)
+* [OpenWeather](https://openweathermap.org)
 * [Some Random API](http://some-random-api.ml/)
 * [Bacon Ipsum](https://baconipsum.com/json-api/)
 * [Images - Unsplash](https://unsplash.com/)
