@@ -78,6 +78,7 @@ class SettingsForm extends Component{
                 .then(()=>this.setState({saveComplete:true}))
                 .catch(res=>console.log(res));
         }
+        document.getElementById("saveAlert").classList.add("animated","fadeOut","delay-2s");
     }
     render(){
         const { reduxState,saveComplete } = this.state;
@@ -138,7 +139,7 @@ class SettingsForm extends Component{
                     </Form.Group>
                 </fieldset>
                 <Button type="submit">Save Settings</Button>
-                <Alert variant="success" style={saveComplete?{visibility: "visible"}:{visibility: "hidden"}}>
+                <Alert variant="success" style={saveComplete?{visibility: "visible"}:{visibility: "hidden"}}  id="saveAlert" >
                     Settings Saved!
                 </Alert>
             </Form>
