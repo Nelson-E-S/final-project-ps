@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Card, Spinner } from 'react-bootstrap';
 
+const CancelToken = axios.CancelToken;
+const source = CancelToken.source();
+
 class AnimalCard extends Component{
     constructor(props){
         super(props);
@@ -14,21 +17,28 @@ class AnimalCard extends Component{
         }
     }
     componentDidMount(){
-        const { animal } = this.state;
-        const query = `https://cors-anywhere.herokuapp.com/http://some-random-api.ml/animal/${animal}`;
+        const query = `https://baconipsum.com/api/?type=meat-and-filler`;
         this.setState({
             loading: true
         });
         try{
             axios
-                .get(query)
+                .get(query, {
+                    cancelToken: source.token
+                  })
                 .then(res=>{
                     const data = res.data
                     this.setState({
                         loading: false,
-                        data: data
+                        data: data[0]
                     })
-                })
+                }).catch(function (thrown) {
+                    if (axios.isCancel(thrown)) {
+                      console.log('Request canceled', thrown.message);
+                    } else {
+                      // handle error
+                    }
+                  });
         }catch(err){
             this.setState({
                 loading: false,
@@ -57,10 +67,10 @@ class AnimalCard extends Component{
             );
         return(
             <Card style={{width: '15rem'}} className="mx-auto">
-                <Card.Img variant='top' src={data.image} />
+                <Card.Img variant='top' src="https://i.some-random-api.ml/y0MAvtbtkd.jpg" />
                 <Card.Body>
                     <Card.Title>{animal} fact</Card.Title>
-                    <Card.Text>{data.fact}</Card.Text>
+                    <Card.Text>{JSON.stringify(data)}</Card.Text>
                 </Card.Body>
             </Card>
         );

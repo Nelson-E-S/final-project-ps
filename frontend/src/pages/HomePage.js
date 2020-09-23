@@ -34,7 +34,6 @@ class HomePage extends Component {
                 .get(query)
                 .then(res=>{
                     const data = res.data;
-                    console.log(data);
                     this.state.dispatch({
                         type:CONFIG_SET,
                         payload: {"id":`${data.id}`,"sets":`${data.sets}`,"items":`${data.items}`}

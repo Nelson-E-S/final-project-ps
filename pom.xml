@@ -11,7 +11,7 @@
 	<groupId>com.demoDeploy</groupId>
 	<artifactId>SpringNReact</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringNReact</name>
+	<name>my-facts-app</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

@@ -9,7 +9,6 @@ const AnimalAccordion = (props) =>{
         indexArr = [1,2,3];
     if (numOfCards === 5)
         indexArr = [1,2,3,4,5];
-    console.log(indexArr);
     
     return(
         <Accordion>
@@ -20,7 +19,7 @@ const AnimalAccordion = (props) =>{
                             Click me!
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey={item}>
-                            <Card.Body><AnimalCard animal={animal} /></Card.Body>
+                            <Card.Body>{<AnimalCard animal={animal} />}</Card.Body>
                         </Accordion.Collapse>
                     </Card>
                 )
