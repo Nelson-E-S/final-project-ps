@@ -31,7 +31,7 @@ class WeatherDisplay extends Component{
             '13n': 'wi-night-alt-snow',
             '50n': 'wi-night-fog'
           };
-        const defaultQuery = "https://api.openweathermap.org/data/2.5/onecall?lat=40.7108&lon=-74.0108&exclude=minutely,hourly,daily,alerts&appid=7ec98d0ba5a7f5ee79130f54113fdc93"
+        //const defaultQuery = "https://api.openweathermap.org/data/2.5/onecall?lat=40.7108&lon=-74.0108&exclude=minutely,hourly,daily,alerts&appid=7ec98d0ba5a7f5ee79130f54113fdc93"
         let customQuery = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=minutely,hourly,daily,alerts&appid=7ec98d0ba5a7f5ee79130f54113fdc93";
         var options = {
             enableHighAccuracy: true,
@@ -106,6 +106,7 @@ class WeatherDisplay extends Component{
             case 'wi-night-fog':
                 fontColor = 'lightslategrey';
                 break;
+            default:
         }
         if(loading)
             return(

@@ -28,7 +28,7 @@ const AnimalCasePage = (props) =>{
                 {numOfCols.map((item,index)=>
                     <Col key={index}>
                         <h4 style={{textAlign:'center'}}>{animals[item]} fact</h4>
-                        <AnimalAccordion animal={animals[item]} numOfCards='3' />
+                        <AnimalAccordion animal={animals[item]} numOfCards={numOfItems} />
                     </Col>
                 )}
             </Row>

@@ -5,9 +5,9 @@ import AnimalCard from './AnimalCard';
 const AnimalAccordion = (props) =>{
     const { animal,numOfCards} = props;
     var indexArr;
-    if (numOfCards === '3')
+    if (numOfCards === 3)
         indexArr = [1,2,3];
-    if (numOfCards === '5')
+    if (numOfCards === 5)
         indexArr = [1,2,3,4,5];
     console.log(indexArr);
     
