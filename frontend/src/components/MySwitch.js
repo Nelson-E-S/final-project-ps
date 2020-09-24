@@ -7,8 +7,8 @@ import SettingsForm from '../components/SettingsForm';
 const MySwitch = () =>(
     <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/facts" component={AnimalCasePage} />
-        <Route path="/settings" component={SettingsForm} />
+        <Route exact path="/facts" component={AnimalCasePage} />
+        <Route exact path="/settings" component={SettingsForm} />
     </Switch>
 );
 
