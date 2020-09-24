@@ -15,11 +15,11 @@ const AnimalCasePage = (props) =>{
     if(configState.cookieFound){
         for(let i = 1; i<=Number(configState.user_config.sets);i++)
             numOfCols.push(i);
-        numOfItems = Number(configState.user_config.sets);
+        numOfItems = Number(configState.user_config.items);
     }else{
         for(let i = 1; i<=Number(configState.temp_config.sets);i++)
             numOfCols.push(i);
-        numOfItems = Number(configState.temp_config.sets);
+        numOfItems = Number(configState.temp_config.items);
     }
     
     return(
