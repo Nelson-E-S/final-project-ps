@@ -6,12 +6,9 @@ import SettingsForm from '../components/SettingsForm';
 
 const MySwitch = () =>(
     <Switch>
-        <Route path="/home" component={HomePage} />
+        <Route exact path="/" component={HomePage} />
         <Route path="/facts" component={AnimalCasePage} />
         <Route path="/settings" component={SettingsForm} />
-        <Route exact path="/">
-            <Redirect to="/home" />
-        </Route>
     </Switch>
 );
 
